@@ -1,9 +1,16 @@
 //Generic
 @import './generic/reset';
 
+//Mixins
+@import './tools/mixin';
+
 //Elements
 @import './elements/fonts';
 @import './elements/page';
 
 //Objects
 @import './objects/app';
+
+//Component
+@import './components/base';
+@import './components/sidebar';

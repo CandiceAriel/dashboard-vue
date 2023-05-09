@@ -1,12 +1,16 @@
 <template>
-  <div class='home'>
-    Welcome
+  <div class='home c-base'>
+    <Sidebar />
   </div>
 </template>
 
 <script>
+import Sidebar from '../components/Sidebar.vue'
+
 export default {
   name: 'HomeView',
-
+  components: {
+    Sidebar
+  }
 }
 </script>
