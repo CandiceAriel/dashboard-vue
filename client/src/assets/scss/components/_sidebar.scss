@@ -1,3 +1,26 @@
-.c-sidebar{
- width: 100px;
+.c-sidebar {
+  width: 100px;
+  padding: 20px;
+  &__menu {
+    &-icon{
+      height: 100%;
+      width: 100%;
+      &_active{
+        filter: brightness(0) invert(1);
+      }
+    }
+    &-wrapper{
+      height: 45px;
+      width: 45px;
+      display: block;
+      margin: 20px auto;
+      padding: 10px;
+      border-radius: 10px;
+      border: 0.5px solid #cdcdcd;  
+      &_active {
+        background-color: #002962;
+      }
+    }
+    
+  }
 }

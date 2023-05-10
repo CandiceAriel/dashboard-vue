@@ -21,19 +21,20 @@ const db = mysql.createConnection({
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost/${PORT}/`);
 });
+app.listen(3001, 'localhost');
 
 app.get('/', (req, res) =>
   res.send('Welcome, user!')
 )
 
-// app.get('/status', (req, res) =>
-//   db.query('SELECT * FROM status', (err, data) => {
-//     if (data) {
-//       res.send(data)
-//     } else console.log(err)
-//   }
-//   )
-// )
+app.get('/task-status', (req, res) =>
+  db.query('SELECT * FROM status', (err, data) => {
+    if (data) {
+      res.send(data)
+    } else console.log(err)
+  }
+  )
+)
 
 // app.get('/tasks/todo', (req, res) =>
 //   db.query('SELECT * FROM tasks WHERE task_status=1', (err, data) => {
