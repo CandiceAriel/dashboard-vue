@@ -24,3 +24,23 @@
     
   }
 }
+
+@media only screen and (max-width: 1440px){
+  .c-sidebar {
+    width: 100px;
+    padding: 20px;
+    &__menu {
+      &-icon{
+        height: 100%;
+        width: 100%;
+      }
+      &-wrapper{
+        height: 45px;
+        width: 45px;
+        display: block;
+        margin: 20px auto;
+        padding: 10px;
+      }
+    }
+  }
+}

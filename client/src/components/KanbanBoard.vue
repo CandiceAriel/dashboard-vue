@@ -1,40 +1,55 @@
 <template>
-  <div class='c-kanban-board'>
-    <h1>Kanban</h1>
+  <div class='c-kanban__board'>
+    <KanbanColumn v-for="item in taskStatus"
+      :key="item.id"
+      :title="item.status"
+    />
+
   </div>
 </template>
 <script>
 import axios from 'axios';
 
+import KanbanColumn from './Kanban/Column.vue'
+
 export default {
   name: 'KanbanBoard',
   components: {
+    KanbanColumn,
   },
   data(){
     return{
-      status: [],
+      taskStatus: [],
+      tasks: [],
     }
   },
   mounted() {
-   this.getStatus();
+    this.fetchStatus();
+    this.fetchTasks();
   },
   computed: {
   },
   methods: {
-    getStatus(){
-      axios.get("http://localhost/3001/task-status")
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          if (!error.response) {
-            // network error
-            this.errorStatus = 'Error: Network Error';
-          } else {
-              this.errorStatus = error.response.data.message;
-          }
-        }
-      ); 
+    fetchStatus(){
+      axios.get('http://localhost:3000/status')
+      .then(response => {
+        const data = response.data;
+        this.taskStatus = data;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
+    fetchTasks(){
+      axios.get('http://localhost:3000/tasks')
+      .then(response => {
+        const data = response.data;
+        this.tasks = data;
+        console.log(this.tasks)
+      })
+      .catch(error => {
+        console.log(error);
+      });
     }
   }
 }

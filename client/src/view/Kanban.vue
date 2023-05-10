@@ -4,7 +4,9 @@
       <Sidebar />
       <div class='c-home__content c-base__content'>
         <Navbar />
-        <KanbanBoard />
+        <div class='c-base__content-bottom'>
+          <KanbanBoard />
+        </div>
       </div>
     </div>   
   </div>
