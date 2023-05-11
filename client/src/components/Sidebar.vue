@@ -1,6 +1,6 @@
 <template>
   <div class="c-sidebar">
-    <div class='c-sidebar__menu-wrapper' :class="{ 'c-sidebar__menu-wrapper_active': activePage === 'Home' }" @click="goTo('home')">
+    <div class='c-sidebar__menu-wrapper' :class="{ 'c-sidebar__menu-wrapper_active': activePage === 'Home' }" @click="goTo('')">
       <img src='../assets/images/dashboard.svg' class='c-sidebar__menu-icon'/>
     </div>
     <div class='c-sidebar__menu-wrapper' :class="{ 'c-sidebar__menu-wrapper_active': this.currRoute === 'Kanban' }"  @click="goTo('kanban')">

@@ -3,7 +3,10 @@
     <div class='c-page__wrapper c-base__wrapper'> 
       <Sidebar />
       <div class='c-home__content c-base__content'>
-        <span>Home</span>
+        <Navbar />
+        <div class='c-base__content-bottom'>
+          <p>Welcome User!</p>
+        </div>
       </div>
     </div>   
   </div>
@@ -11,11 +14,13 @@
 
 <script>
 import Sidebar from '../components/Sidebar.vue'
+import Navbar from '../components/Navbar.vue'
 
 export default {
   name: 'HomeView',
   components: {
-    Sidebar
+    Sidebar,
+    Navbar
   }
 }
 </script>
