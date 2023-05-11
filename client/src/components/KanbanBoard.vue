@@ -1,15 +1,15 @@
 <template>
   <div class='c-kanban__board'>
-    <KanbanColumn v-for="item in taskStatus"
-      :key="item.id"
-      :title="item.status"
-      v-bind:tasks="item.id === 1 ? filterToDo : item.id === 2 ? filterInProgress : item.id === 3 ? filterOnReview : item.id === 4 ? filterDone : tasks "
-    />
     <!-- <KanbanColumn v-for="item in taskStatus"
       :key="item.id"
       :title="item.status"
-      v-bind:tasks="item.id === 1 ? todo : tasks"
+      v-bind:tasks="item.id === 1 ? filterToDo : item.id === 2 ? filterInProgress : item.id === 3 ? filterOnReview : item.id === 4 ? filterDone : tasks "
     /> -->
+    <KanbanColumn v-for="item in taskStatus"
+      :key="item.id"
+      :title="item.status"
+      v-bind:tasks="filterTask(item.id)"
+    />
   </div>
 </template>
 <script>
@@ -68,7 +68,7 @@ export default {
       })
       
       return dones;
-    }
+    },
   },
   methods: {
     fetchStatus(){
@@ -91,6 +91,15 @@ export default {
         console.log(error);
       });
     },
+    filterTask(id){
+      let filteredTask = this.tasks;
+
+      filteredTask = filteredTask.filter((t) => {
+        return (t.task_status === id);
+      })
+
+      return filteredTask;
+    }
   },
 }
 </script>
