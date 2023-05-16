@@ -8,7 +8,9 @@
     <KanbanColumn v-for="item in taskStatus"
       :key="item.id"
       :title="item.status"
+      :id="item.id"
       v-bind:tasks="filterTask(item.id)"
+      @change-status="fetchTasks"
     />
   </div>
 </template>
@@ -30,7 +32,6 @@ export default {
   mounted() {
     this.fetchStatus();
     this.fetchTasks();
-    console.log(this.toDo)
   },
   computed: {
     filterToDo() {

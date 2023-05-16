@@ -7,6 +7,9 @@
       font-weight: 800;
       margin-left: 5px;
     }
+    &-header{
+      display: flex;
+    }
   }
   &__card{
     background: #FFFFFF;
@@ -46,6 +49,11 @@
     &_todo{
       width: 69px;
     }
+  }
+  &__icon{
+    height: 16px;
+    width: 16px;
+    margin: 2px 10px 0px;
   }
 }
 
