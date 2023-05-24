@@ -1,0 +1,15 @@
+.c-home{
+  &__tasks-wrapper{
+    margin-top: 20px;
+  }
+  &__task{
+    padding: 10px;
+    background-color: #FFFFFF;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+}
