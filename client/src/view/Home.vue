@@ -8,8 +8,11 @@
           <h1>All Tasks</h1>
           <div class='c-home__tasks-wrapper'>
             <div v-for="t in tasks" :key="t.id" class='c-home__task'>
-              <span>{{t.title}}</span>
-              <span>{{t.task_status}}</span>
+              <span class='c-home__task-title'>{{t.title}}</span>
+              <span class='c-base__task-status c-base__task-status_todo' v-if="t.task_status === 1">To Do</span>
+              <span class='c-base__task-status c-base__task-status_in-progress' v-else-if="t.task_status === 2">In Progress</span>
+              <span class='c-base__task-status' v-else-if="t.task_status === 3">On Review</span>
+              <span class='c-base__task-status' v-else-if="t.task_status === 4">To Do</span>
             </div>
           </div>
         </div>

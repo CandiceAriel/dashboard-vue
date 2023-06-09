@@ -28,6 +28,25 @@
       margin-bottom: 20px;
     }
   }
+
+  &__task{
+    &-status{
+      padding: 5px 10px;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: 800;
+      max-height: 26px;
+      &_todo{
+        width: 69px;
+        background-color: #f6f6f6;
+      }
+      &_in-progress{
+        width: 103px;
+        background: #002962;
+        color: #FFFFFF;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 1440px){
